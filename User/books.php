@@ -10,6 +10,7 @@
 <head>
 	<title>Books</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	<style type="text/css">
 		.srch
@@ -20,7 +21,7 @@
 		
 		body {
   font-family: "Times New Roman", sans-serif;
-  transition: background-color .5s;
+  transition: background-color:skyblue .5s;
 }
 
 .sidenav {
@@ -31,7 +32,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #b06ab3;
+  background-color: #A6FFCB;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -41,13 +42,13 @@
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #82C26E;
+  color: #0D0E0D;
   display: block;
   transition: 0.3s;
 }
 
 .sidenav a:hover {
-  color: white;
+  color: black;
 }
 
 .sidenav .closebtn {
@@ -73,7 +74,7 @@
 }
 .h:hover
 {
-	color:white;
+	color:skyblue;
 	width: 300px;
 	height: 50px;
 	background-color: skyblue;
@@ -88,12 +89,14 @@
 	<div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-  			<div style="color: ; margin-left: 60px; font-size: 20px;">
+  			<div style="color:#a6ffcb ; margin-left: 60px; font-size: 20px;">
 
                 <?php
                 if(isset($_SESSION['user']))
 
-                { 	echo "<img class='img-circle profile_img' height=120 width=120 src='image/".$_SESSION['de']."'>";
+                {
+					$_SESSION['de'] = 'de.jpg'; 
+					echo "<img class='img-circle profile_img' height=130 width=150 src='image/".$_SESSION['de']."'>";
                     echo "</br></br>";
 
                     echo "Welcome ".$_SESSION['user']; 
@@ -102,10 +105,9 @@
             </div><br><br>
 
  
-  <div class="h"> <a href="books.php">Books</a></div>
   <div class="h"> <a href="request.php">Book Request</a></div>
-  <div class="h"> <a href="issue_info.php">Issue Information</a></div>
-  <div class="h"><a href="expired.php">Expired List</a></div>
+  <div class="h"> <a href="issue.php">Issue Information</a></div>
+  <div class="h"><a href="exprier.php">Expired List</a></div>
   <div class="h"><a href="index.php">Home</a></div>
   <div class="h"><a href="profile.php">Profile</a></div>
 
@@ -127,13 +129,14 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft= "0";
-  document.body.style.backgroundColor = "skyblue";
+  document.body.style.backgroundColor = "white";
 }
 </script>
 	<!--___________________search bar________________________-->
 
 	<div class="srch">
 		<form class="navbar-form" method="post" name="form1">
+			
 			
 				<input class="form-control" type="text" name="search" placeholder="search books.." required="">
 				<button style="background-color: #96df26; border-radius: 40px;" type="submit" name="submit" class="btn btn-default">
@@ -145,7 +148,7 @@ function closeNav() {
 	<div class="srch">
 		<form class="navbar-form" method="post" name="form1">
 			
-				<input class="form-control" type="text" name="bid" placeholder="Enter Book ID" required="">
+				<input class="form-control" type="text" name="Books_Id" placeholder="Enter Book ID" required="">
 				<button style="background-color: #ef629f; border-radius: 20px;" type="submit" name="submit1" class="btn btn-default">Request
 				</button>
 		</form>
@@ -166,7 +169,7 @@ function closeNav() {
 			else
 			{
 		echo "<table class='table table-bordered table-hover' >";
-			echo "<tr style='background-color: black;'>";
+			echo "<tr style='background-color: #96df26;'>";
 				//Table header
 				echo "<th>"; echo "Books ID";	echo "</th>";
 				echo "<th>"; echo "Books Name";  echo "</th>";
@@ -179,6 +182,7 @@ function closeNav() {
 
 			while($row=mysqli_fetch_assoc($q))
 			{
+				
 				echo "<tr>";
 				echo "<td>"; echo $row['Books_Id']; echo "</td>";
 				echo "<td>"; echo $row['Name']; echo "</td>";
@@ -198,7 +202,7 @@ function closeNav() {
 			$res=mysqli_query($db,"SELECT * FROM `books` ORDER BY `books`.`name` ASC;");
 
 		echo "<table class='table table-bordered table-hover' >";
-			echo "<tr style='background-color: #4169e1;'>";
+			echo "<tr style='background-color: #96df26; font-size:18px'>";
 				//Table header
 				echo "<th>"; echo "Books ID";	echo "</th>";
 				echo "<th>"; echo "Books Name";  echo "</th>";
@@ -230,7 +234,7 @@ function closeNav() {
 		{
 			if(isset($_SESSION['user']))
 			{
-				mysqli_query($db,"INSERT INTO issue_book Values('$_SESSION[user]', '$_POST[Books_Id]', '', '', '');");
+				mysqli_query($db,"INSERT INTO issue Values('$_SESSION[user]', '$_POST[Books_Id]', '', '', '');");
 				?>
 					<script type="text/javascript">
 						window.location="request.php"

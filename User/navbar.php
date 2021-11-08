@@ -47,6 +47,7 @@
                         echo "<img class='img-circle profile_img' height=30 width=30 src='image/".$_SESSION['de']."'>";
 
                         echo " ".$_SESSION['user']; 
+                        $_SESSION['de'] = 'de.jpg';
                       ?>
                     </div>
                   </a></li>

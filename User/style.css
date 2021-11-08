@@ -115,10 +115,10 @@ section
 
    height: 500px;
     width:  1536px;
-    background-color: skyblue; 
+    background-color: ; 
 }
 
-}
+
 .logo 
 {
     float: left;
@@ -159,7 +159,7 @@ h1
 {
     height: 200px;
     width: 300px;
-    background-color: #478199;
+    background-color: transparent;
     margin: 80px auto;
     opacity: .6;
 }

@@ -16,6 +16,7 @@ session_start();
 	<meta charset="utf-8">
 	<meta name="" ="viewport" content="width=device-width, inital-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 	<style type="text/css">
 	nav
 	{
@@ -30,6 +31,14 @@ session_start();
 		color: black;
 	
 	}
+	nav ul a:hover
+{
+	color: black;
+	width: 150px;
+	height: 90px;
+	border-radius: 50px;
+	background-color:    #ff3399 ;
+}
 	
 	.fa
 		{
@@ -61,7 +70,7 @@ session_start();
 			background: #dd4b39;
 			color: white;
 		}
-		.fa-instagram
+		.fa-linkedin
 		{
 			background: #125688;
 			color: white;
@@ -88,7 +97,8 @@ session_start();
 						
 				<li><a href="index.php">HOME</a></li>
 		   		<li><a href="books.php">BOOKS</a></li>
-		   		<li><a href="User login.php">USER-LOGIN</a></li>
+		   		<li><a href="user login.php">LOGIN</a></li>
+				   <li><a href="registration.php">Sign-Up</a></li>
 		   		<li><a href="feedback.php">FEEDBACK</a></li>
 
 					</ul>
@@ -103,6 +113,7 @@ session_start();
 								<li><a href="index.php">HOME</a></li>
 								<li><a href="books.php">BOOKS</a></li>
 								<li><a href=" user login.php">Login</a></li>
+								<li><a href="registration.php">Sign-Up</a></li>
 								<li><a href="feedback.php">FEEDBACK</a></li>
 							</ul>
 						</nav>
@@ -112,31 +123,29 @@ session_start();
 		?>
         </header>
         <section>
-			<div class="bul_img">
+		<div class="bul_img">
 
-        	<br><br><br><br><br>
-			<br><br><br><br><br>
-			<br><br><br>
-        	<div class="bul">
-        		<br><br><br>
-        		<h1 style="text-align: center; font-size: 30px;">Welcome to library</h1><br><br>
-        		<h1 style="text-align: center;font-size: 20px;">Open at  : 10:00 AM</h1><br>
-        		<h1 style="text-align: center;font-size: 20px;">Close at : 16:00 PM</h1><br>
-        </div>
-	     </div>
+<br><br><br><br><br>
+
+<div class="bul">
+	
+	<h1 style="text-align: center; font-size: 30px;">WELCOM TO <br>E-LIFE LEARNER</h1><br><br>
+	<p style="text-align: center; font-size: 20px; color: red;">In this online library you will find <br> various type of books. <br> Exprlore it by yourself </p>
+</div>
         </section>
         <br><br><br><br><br>
 		<br><br><br><br><br><br>
-		<h3 style="color: black;text-align: center;">Contact us through social media</h3><br>
+		
 
 	<div style="margin:0px 680px;">
     <a href="https://www.facebook.com/abir.ahmed89/" trarget="_blank" class="fa fa-facebook"></a>
 		<a href="https://twitter.com/abirahm09836085?t=QqEzA2OVVvMUYVF9w4SFLw&s=09" trarget="_blank" class="fa fa-twitter"></a>
 		<a href="abdullahabir888@gmail.com" trarget="_blank" class="fa fa-google"></a>
-		<a href="https://www.instagram.com/abdullah_al_ahad_abir/" trarget="_blank" class="fa fa-instagram"></a>
+		<a href="https://www.linkedin.com/in/abdullah-al-ahad-abir-b72827215/" trarget="_blank" class="fa fa-linkedin"></i></a>
 	</div>
 </body>
-<p style="color: #bf0fff; font-family: Times New Roman;">
+<br><br>
+<p  style="color: black; font-family: Times New Roman;">
     &nbsp; Copyright @Team Invinsible 2021-2024
 </p>
 

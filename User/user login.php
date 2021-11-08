@@ -17,6 +17,8 @@ include 'connection.php';
 
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -44,7 +46,7 @@ include 'connection.php';
       </form>
       <p style="text-align: center; color:black;">
           <br><br><br>
-          <a style="color: blue; " href="">Forgot Password</a><br><br>
+          <a style="color: blue;" href="update.php">Forgot Password</a><br><br>
          Don'thave account?&nbsp;<a style="text-align: center; color: #bf0fff; " href="registration.php"> Sign Up </a>
         </div>
 
@@ -77,7 +79,7 @@ if(isset($_POST['submit']))
   else
   {
 	$_SESSION['user'] = $_POST['Username'];
-	$_SESSION['de.jpg']= $row['de.jpg'];
+	$_SESSION['de']= $row['de'];
 
 	?>
 	  <script type="text/javascript">
@@ -89,7 +91,7 @@ if(isset($_POST['submit']))
 
 ?>
 <br><br><br><br><br><br>
-<p style="color: #bf0fff; font-family: Times New Roman;">
+<p style="color:#4A00E0; font-size:15px; font-family: Times New Roman;">
     <br>
     &nbsp; Copyright @Team Invinsible 2021-2024
 </p>
